@@ -42,6 +42,11 @@ header {
         font-variant: small-caps;
     }
 
+    header a {
+        text-decoration: none;
+        color: black;
+    }
+
     nav {
     position: relative;
     height: 30px;
