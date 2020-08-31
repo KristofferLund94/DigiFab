@@ -1,0 +1,255 @@
+* {
+    margin: 0px;
+    text-align: center;
+    list-style: none;
+    padding: 0px;
+}
+    
+
+body {
+    background-image: url("http://www.it-stud.hiof.no/~kristolu/webutvikling/oblig/media/body.jpg");
+}
+
+.wrapper {
+    position: relative;
+    width: 97vw;
+    max-width: 960px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 85px 1fr 40px;
+    grid-gap: 1em;
+    grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer"
+}
+
+header {
+    grid-area: header;
+    background-image: url("http://www.it-stud.hiof.no/~kristolu/webutvikling/oblig/media/header.jpeg");
+    background-size: 100%;
+    background-position-y: 50%;
+    border-radius: 0px 0px 15px 15px;
+    color: rgb(27, 27, 27);
+}
+
+    h1 {
+        margin: 5px;
+        width: 100%;
+        font-variant: small-caps;
+    }
+
+    nav {
+    position: relative;
+    height: 30px;
+    text-align: center;
+    padding: 0px 5%;
+}
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        padding: 4px 10px;
+        border-radius: 5px;
+        background-color: rgb(0, 170, 0);
+    }
+
+    nav > ul > li {
+        width: 70px;
+        height: 22px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .oblig2dropdown, .oblig3dropdown, .oblig4dropdown, .oblig5dropdown{
+        display: block;
+        position: absolute; 
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: -1;
+        transform: translateY(-500px);
+    }
+
+    nav li:hover,
+    nav li:focus,
+    nav a:focus li {
+        background: limegreen;
+        cursor: pointer;
+    }
+
+    .oblig2:focus .oblig2dropdown,
+    .oblig2dropdown:focus-within,
+
+    .oblig3:focus .oblig3dropdown,
+    .oblig3dropdown:focus-within,
+
+    .oblig4:focus .oblig4dropdown,
+    .oblig4dropdown:focus-within,
+
+    .oblig5:focus .oblig5dropdown,
+    .oblig5dropdown:focus-within{
+        transform: translate(-40px, 5px);
+        z-index: 1;
+    }
+
+nav ul li ul li {
+    margin: -1px;
+    border-radius: 0px;
+    border: 1px solid black;
+}
+
+aside {
+    grid-area: aside;
+    border: solid black 1px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.918);   
+}
+
+aside img {
+    width: 90%;
+}
+
+main {
+    grid-area: main;
+    border: solid black 1px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.918);   
+}
+
+h2 {
+    margin:20px;
+}
+h3 {
+    margin: 0px 0px 10px 0px;
+}
+p {
+    margin: 0px 40px 30px 40px;
+}
+img {
+    margin: 10px 0px 30px 0px;;
+    width: 80%;
+}
+
+main a {
+    text-decoration: underline;
+    color: blue;
+}
+
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 5%;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: green;
+    color: white;
+}
+
+footer {
+    grid-area: footer;
+    background-image: url("http://www.it-stud.hiof.no/~kristolu/webutvikling/oblig/media/header.jpeg");
+    background-size: 100%;
+    background-position-y: 50%;
+
+    padding: 10px 30px 10px 30px;  
+    border-radius: 15px 15px 0px 0px;
+    text-align: justify;
+    color: rgb(27, 27, 27);
+    height: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 85px 1fr 40px;
+        grid-gap: 1em;
+        grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    }
+    aside {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 600px) {
+
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 1fr 40px;
+        grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li,
+    nav > ul > a > li {
+        width: 95%;
+        height: 20px;
+        border: 1px black solid;
+    }
+    .oblig2dropdown, .oblig3dropdown, .oblig4dropdown, .oblig5dropdown{
+        width: 90%;
+        
+    }
+    .oblig2:focus .oblig2dropdown,
+    .oblig2dropdown:focus-within,
+
+    .oblig3:focus .oblig3dropdown,
+    .oblig3dropdown:focus-within,
+
+    .oblig4:focus .oblig4dropdown,
+    .oblig4dropdown:focus-within,
+
+    .oblig5:focus .oblig5dropdown,
+    .oblig5dropdown:focus-within{
+        transform: translate(-5%, -0px);
+        z-index: 1;
+    }
+}
+
+@media print {
+    header, nav, footer, aside{
+        display: none;
+    }
+
+    main {
+        width: 95vw;
+        border: none;
+        top: 4cm;
+    }
+}
