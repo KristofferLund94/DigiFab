@@ -46,6 +46,10 @@ header {
         font-variant: small-caps;
     }
 
+    a > h1 {
+        color: inherit
+    }
+
     nav {
     position: relative;
     height: 30px;
