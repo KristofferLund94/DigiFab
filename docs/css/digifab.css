@@ -40,7 +40,7 @@ header {
     color: rgb(27, 27, 27);
 }
 
-    header a {
+    header > a {
         margin: 0px 0px 15px 0px;
         padding: 10px;
         width: 100%;
